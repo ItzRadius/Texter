@@ -40,7 +40,6 @@ $level = $sender->getLevel();
 $text = implode(" ", $args);
 $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 $config->set("$text, $position);
-$this->saveResource("config.yml");
 $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
 $sender->getLevel()->addParticle(new FloatingTextParticle($position, $level, $text));
         }
