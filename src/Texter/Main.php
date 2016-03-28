@@ -33,16 +33,11 @@ class Main extends PluginBase{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if($cmd->getName() == "texter"){
-$x = $sender->getX();
-$y = $sender->getY();
-$z = $sender->getZ();
-$level = $sender->getLevel();
-$text = implode(" ", $args);
-$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-$config->set("$text, $position);
-$position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
-$sender->getLevel()->addParticle(new FloatingTextParticle($position, $level, $text));
+        $level = $sender->getLevel();
+        $text = implode(" ", $args);
+        $config->set("$text, $position");
+        $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
+        $sender->getLevel()->addParticle(new FloatingTextParticle($position, $level, $text));
         }
-        return true;
-    }
+}
 }
