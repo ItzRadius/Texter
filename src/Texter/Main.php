@@ -54,7 +54,7 @@ class Main extends PluginBase implements Listener{
 public function onJoin(PlayerJoinEvent $event){
 $player = $event->getPlayer();
 $this->getDataFolder("/config.yml", Config::YAML);
-$xyz = $this->config->get("xyz");
+$xyz = $this->getConfig("xyz");
 $xyz["x"] = $x;
 $xyz["y"] = $y;
 $xyz["z"] = $z;
