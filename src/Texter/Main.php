@@ -18,13 +18,13 @@ use pocketmine\plugin\Plugin;
 use pocketmine\math\Vector3;
 use pocketmine\utils\config;
 
-class Main extends PluginBase{
+class Main extends PluginBase implements Listener{
     
     public function onEnable(){
+    	$this->getServer()->getPluginManager()->registerEvents($this ,$this);
         $this->getLogger()->info(Color::GREEN ."Enabled!");
         @mkdir($this->getDataFolder());
 	$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$this->saveResource("config.yml");
     }
     
     public function onDisable(){
@@ -35,7 +35,8 @@ class Main extends PluginBase{
         if($cmd->getName() == "texter"){
         $level = $sender->getLevel();
         $text = implode(" ", $args);
-        $config->set("$text, $position");
+        $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+	$config->set($text, $position);
         $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
         $sender->getLevel()->addParticle(new FloatingTextParticle($position, $level, $text));
         }
