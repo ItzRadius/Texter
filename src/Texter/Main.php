@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener{
         $x = $sender->getX();
         $y = $sender->getZ();
         $z = $sender->getZ();
-        $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
+        $position = new Vector3($sender->x, $sender->y, $sender->z);
         $text = implode(" ", $args);
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 	$config->set("Texter", array(
@@ -58,7 +58,7 @@ $x = $config->get("x");
 $y = $config->get("y");
 $z = $config->get("z");
 $text = $config->get("text");
-$position = new Vector3($x, $y + 0.5, $z);
+$position = new Vector3($x, $y, $z);
 $player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
 }
 }
