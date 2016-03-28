@@ -55,10 +55,10 @@ public function onJoin(PlayerJoinEvent $event){
 $player = $event->getPlayer();
 $this->getDataFolder("/config.yml", Config::YAML);
 $xyz = $this->getConfig("xyz");
-$xyz["x"] = $x;
-$xyz["y"] = $y;
-$xyz["z"] = $z;
-$xyz["text"] = $text;
+$x = $xyz["x"];
+$y = $xyz["y"];
+$z = $xyz["z"];
+$text = $xyz["text"];
 $player->getLevel()->addParticle(new FloatingTextParticle($x, $y, $z, $text));
 }
 }
