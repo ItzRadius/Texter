@@ -54,9 +54,9 @@ class Main extends PluginBase implements Listener{
 public function onJoin(PlayerJoinEvent $event){
 $config = $this->getConfig();
 $player = $event->getPlayer();
-$x = $config->getAll("x");
-$y = $config->getAll("y");
-$z = $config->getAll("z");
+$x = $config->get("x");
+$y = $config->get("y");
+$z = $config->get("z");
 $text = $config->getAll("text");
 $position = new Vector3($x, $y, $z);
 $player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
