@@ -3,6 +3,8 @@
 namespace Texter;
 
 use pocketmine\Player;
+use pocketmine\event\Player\PlayerJoinEvent;
+use pocketmine\event\Player\PlayerRespawnEvent;
 use pocketmine\utils\TextFormat as Color;
 use pocketmine\command\{Command, CommandSender};
 use pocketmine\plugin\PluginBase;
@@ -11,8 +13,6 @@ use pocketmine\event\Listener;
 use pocketmine\level\particle\FloatingTextParticle;
 use pocketmine\level\particle\Particle;
 use pocketmine\level\Level;
-use pocketmine\event\Player\PlayerJoinEvent;
-use pocketmine\event\Player\PlayerRespawnEvent;
 use pocketmine\level\Position;
 use pocketmine\level\Position\getLevel;
 use pocketmine\plugin\PluginManager;
