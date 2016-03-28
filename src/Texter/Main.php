@@ -56,7 +56,6 @@ $xyz["x"] = $x;
 $xyz["y"] = $y;
 $xyz["z"] = $z;
 $xyz["text"] = $text;
-$position = ($x, $y + 0.5, $z);
-$player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
+$player->getLevel()->addParticle(new FloatingTextParticle($x, $y, $z, $text));
 }
 }
