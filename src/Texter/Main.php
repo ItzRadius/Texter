@@ -3,8 +3,8 @@
 namespace Texter;
 
 use pocketmine\Player;
-use pocketmine\event\Player\PlayerJoinEvent;
-use pocketmine\event\Player\PlayerRespawnEvent;
+use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\utils\TextFormat as Color;
 use pocketmine\command\{Command, CommandSender};
 use pocketmine\plugin\PluginBase;
