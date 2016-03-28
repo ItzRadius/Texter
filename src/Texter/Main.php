@@ -58,6 +58,7 @@ $x = $config->get("x");
 $y = $config->get("y");
 $z = $config->get("z");
 $text = $config->get("text");
-$player->getLevel()->addParticle(new FloatingTextParticle($x, $y, $z, $text));
+$position = new Vector3($x, $y + 0.5, $z);
+$player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
 }
 }
