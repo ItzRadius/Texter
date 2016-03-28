@@ -34,12 +34,29 @@ class Main extends PluginBase implements Listener{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if($cmd->getName() == "texter"){
+        $x = $sender->getX();
+        $y = $sender->getZ();
+        $z = $sender->getZ();
         $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
         $text = implode(" ", $args);
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$config->set($text, $position);
+	$config->set("Texter", array(
+        "x" => $x,
+        "y" => $y,
+        "z" => $z,
+        "text" => $text,));
 	$config->save();
         $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text));
         }
+}
+public function onJoin(PlayerJoinEvent $event){
+$player = $event->getPlayer();
+$xyz = $this->config->get("xyz");
+$xyz["x"] = $x;
+$xyz["y"] = $y;
+$xyz["z"] = $z;
+$xyz["text"] = $text;
+$position = $x, $y + 0.5, $z;
+$player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
 }
 }
