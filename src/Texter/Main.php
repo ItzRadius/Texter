@@ -58,6 +58,6 @@ $y = $config->get("y");
 $z = $config->get("z");
 $text = $config->get("text");
 $position = new Vector3($x, $y + 0.5, $z);
-$event->getLevel()->addParticle(new FloatingTextParticle($position, $text));
+$event->addParticle(new FloatingTextParticle($position, $text));
 }
 }
