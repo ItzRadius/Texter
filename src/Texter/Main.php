@@ -34,13 +34,12 @@ class Main extends PluginBase implements Listener{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if($cmd->getName() == "texter"){
-        $level = $sender->getLevel();
         $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
         $text = implode(" ", $args);
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 	$config->set($text, $position);
 	$config->save();
-        $sender->getLevel()->addParticle(new FloatingTextParticle($position, $level, $text));
+        $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text));
         }
 }
 }
