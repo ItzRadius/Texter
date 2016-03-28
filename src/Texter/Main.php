@@ -53,11 +53,12 @@ class Main extends PluginBase implements Listener{
 }
 public function onJoin(PlayerJoinEvent $event){
 $config = $this->getConfig();
+$player = $event->getPlayer();
 $x = $config->get("x");
 $y = $config->get("y");
 $z = $config->get("z");
 $text = $config->get("text");
 $position = new Vector3($x, $y + 0.5, $z);
-$event->addParticle(new FloatingTextParticle($position, $text));
+$player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
 }
 }
