@@ -39,15 +39,10 @@ $z = $sender->getZ();
 $level = $sender->getLevel();
 $text = implode(" ", $args);
 $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-$config->set("Texter", array(
-"x" => $x,
-"y" => $y,
-"z" => $z,
-"world" => $level,
-"text" => $text,));
+$config->set("$text, $position);
 $this->saveResource("config.yml");
 $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
-$sender->getLevel()->addParticle(new FloatingTextParticle($position, $text));
+$sender->getLevel()->addParticle(new FloatingTextParticle($position, $level, $text));
         }
         return true;
     }
