@@ -56,7 +56,7 @@ $player = $event->getPlayer();
 $this->getDataFolder("/config.yml", Config::YAML);
 $x = $this->config->get("x");
 $y = $this->config->get("y");
-$z = $this->config->get($"z");
+$z = $this->config->get("z");
 $text = $this->config->get("text");
 $player->getLevel()->addParticle(new FloatingTextParticle($x, $y, $z, $text));
 }
