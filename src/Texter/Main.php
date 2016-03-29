@@ -52,12 +52,11 @@ class Main extends PluginBase implements Listener{
         }
 }
 public function onJoin(PlayerJoinEvent $event){
-$config = $this->getConfig();
-$player = $event->getPlayer();
-$x = $config->getNested("Texter.x");
-$y = $config->getNested("Texter.y");
-$z = $config->getNested("Texter.z");
-$text = $config->getNested("Texter.text");
+$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+$x = $config->get("x");
+$y = $config->get("y");
+$z = $config->get("z");;
+$text = $config->get("text");;
 $position = new Vector3($x, $y, $z);
 $player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
 }
