@@ -53,7 +53,7 @@ class Main extends PluginBase implements Listener{
 }
 
 	public function onPlayerJoin(PlayerJoinEvent $event){
-		foreach($this->cfg->get("Texter") as $position){
+		foreach($this->getConfig->get("Texter") as $position){
 			$vect = new Vector3($position["x"], $position["y"], $position["z"]);
 			$finaltext = "";
 			foreach($floats["text"] as $text){
