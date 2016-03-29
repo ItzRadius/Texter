@@ -48,7 +48,7 @@ class Main extends PluginBase implements Listener{
         "z" => $z,
         "text" => $text,));
 	$config->save();
-        $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text));
+        $sender->addParticle(new FloatingTextParticle($position, $text));
         }
 }
 public function onJoin(PlayerJoinEvent $event){
