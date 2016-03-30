@@ -61,7 +61,7 @@ class Main extends PluginBase implements Listener{
 			}
 			
 			if($level->getName() == $floats["level"]){
-				$level->addParticle(new FloatingTextParticle($vect->add(0.5, 0.0, -0.5), "", $finaltext));
+				$event->addParticle(new FloatingTextParticle($vect->add(0.5, 0.0, -0.5), "", $finaltext));
 			}
 		}
 	}
