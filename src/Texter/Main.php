@@ -51,19 +51,5 @@ class Main extends PluginBase implements Listener{
         $sender->addParticle(new FloatingTextParticle($position, $text));
         }
 }
-
-	public function onPlayerJoin(PlayerJoinEvent $event){
-		$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-		foreach($config->get("Texter") as $position){
-			$vect = new Vector3($position["x"], $position["y"], $position["z"]);
-			$finaltext = "";
-			foreach($floats["text"] as $text){
-				$finaltext .= $text . "\n";
-			}
-			
-			if($level->getName() == $floats["level"]){
-				$event->addParticle(new FloatingTextParticle($vect->add(0.5, 0.0, -0.5), "", $finaltext));
-			}
-		}
-	}
 }
+
