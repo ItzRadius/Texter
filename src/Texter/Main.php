@@ -52,7 +52,6 @@ class Main extends PluginBase implements Listener{
        $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
        $position = $config->get("POS");
        $text = $config->get("TEXT");
-       $event->addParticle(new FloatingTextParticle($position, $text))
+       $event->addParticle(new FloatingTextParticle($position, $text));
    }
 }
-
