@@ -42,14 +42,17 @@ class Main extends PluginBase implements Listener{
         $position = new Vector3($sender->x, $sender->y, $sender->z);
         $text = implode(" ", $args);
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$config->set("Texter", array(
-        "x" => $x,
-        "y" => $y,
-        "z" => $z,
-        "text" => $text,));
+	$config->set("POS",$position);
+	$config->set("TEXT",$text);
 	$config->save();
         $sender->addParticle(new FloatingTextParticle($position, $text));
         }
 }
+   public function onJoin(PlayerJoinEvent $event){
+       $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+       $position = $config->get("POS");
+       $text = $config->get("TEXT");
+       $event->addParticle(new FloatingTextParticle($position, $text))
+   }
 }
 
