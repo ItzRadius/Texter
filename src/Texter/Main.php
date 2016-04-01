@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener{
        $y = $config->get("Y");
        $z = $config->get("Z");
        $text = $config->get("TEXT");
-       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text;
+       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
        $level->addParticle($particle);
    }
 }
