@@ -40,37 +40,30 @@ class Main extends PluginBase implements Listener{
         $x = $sender->x;
         $y = $sender->y;
         $z = $sender->z;
-        $text = implode(" ", $args);
-        $level = $sender->getLevel();
-        $level->addParticle(new FloatingTextParticle($position, $text));
-        $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-        $config->set("X",$x);
-        $config->set("Y",$y);
-	$config->set("Z",$z);
-	$config->set("TEXT",$text);
-	$config->save();
+        $sender->sendMessage(Color::YELLOW . "Your POS is:\n" . "Your X is:" . Color::GREEN . $x . Color::YELLOW . "\nYour Y is: " . Color::GREEN . $y . Color::YELLOW . "\nYour Z is: " . Color::GREEN . $z . Color::YELLOW . "Put your X - Y -Z in the config file to add Floating Text!");
         }
 }
    public function onJoin(PlayerJoinEvent $event){
        $player = $event->getPlayer();
        $level = $player->getLevel();
        $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-       $x = $config->get("X");
-       $y = $config->get("Y");
-       $z = $config->get("Z");
-       $text = $config->get("TEXT");
-       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
+       $x1 = $config->get("X1");
+       $y1 = $config->get("Y1");
+       $z1 = $config->get("Z1");
+       $text1 = $config->get("TEXT1");
+       $particle = new FloatingTextParticle(new Vector3($x1, $y1, $z1), $text1);
        $level->addParticle($particle);
-   }
-      public function onRespawn(PlayerRespawnEvent $event){
-       $player = $event->getPlayer();
-       $level = $player->getLevel();
-       $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-       $x = $config->get("X");
-       $y = $config->get("Y");
-       $z = $config->get("Z");
-       $text = $config->get("TEXT");
-       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
-       $level->addParticle($particle);
+       $x2 = $config->get("X2");
+       $y2 = $config->get("Y2");
+       $z2 = $config->get("Z2");
+       $text2 = $config->get("TEXT2");
+       $particle2 = new FloatingTextParticle(new Vector3($x2, $y2, $z2), $text2);
+       $level->addParticle($particle2);
+       $x3 = $config->get("X3");
+       $y3 = $config->get("Y3");
+       $z3 = $config->get("Z3");
+       $text3 = $config->get("TEXT3");
+       $particle3 = new FloatingTextParticle(new Vector3($x3, $y3, $z3), $text3;
+       $level->addParticle($particle3);
    }
 }
