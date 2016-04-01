@@ -27,7 +27,6 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(Color::GREEN ."Enabled!");
         @mkdir($this->getDataFolder());
 	$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$config->save();
     }
     
     public function onDisable(){
