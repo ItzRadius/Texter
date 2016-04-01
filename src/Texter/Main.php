@@ -37,19 +37,28 @@ class Main extends PluginBase implements Listener{
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if($cmd->getName() == "texter"){
         $position = new Vector3($sender->x, $sender->y, $sender->z);
+        $x = $sender->x;
+        $y = $sender->y;
+        $z = $sender->z;
         $text = implode(" ", $args);
-        $sender->addParticle(new FloatingTextParticle($position, $text));
+        $level->addParticle(new FloatingTextParticle($position, $text));
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$config->set("POS",$position);
+        $config->set("X",$x);
+        $config->set("Y",$y);
+	$config->set("Z",$z);
 	$config->set("TEXT",$text);
 	$config->save();
         }
 }
    public function onJoin(PlayerJoinEvent $event){
        $player = $event->getPlayer();
+       $level = $player->getLevel();
        $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-       $position = $config->get("POS");
+       $x = $config->get("X");
+       $y = $config->get("Y");
+       $z = $config->get("Z");
        $text = $config->get("TEXT");
-       $player->addParticle(new FloatingTextParticle($position, $text));
+       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text;
+       $level->addParticle($particle);
    }
 }
