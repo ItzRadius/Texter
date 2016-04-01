@@ -1,27 +1,17 @@
 ---
 # Text #1
-X: 
-"Y": 
-Z: 
-TEXT: 
-# Text #2
 X1: 
 "Y1": 
 Z1: 
 TEXT1:
-# Text #3
+# Text #2
 X2: 
 "Y2": 
 Z2: 
 TEXT2:
-# Text #4
+# Text #3
 X3: 
 "Y3": 
 Z3: 
 TEXT3:
-# Text #5
-X5: 
-"Y5": 
-Z5: 
-TEXT5:
 ...
