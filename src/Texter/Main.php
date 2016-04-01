@@ -62,4 +62,15 @@ class Main extends PluginBase implements Listener{
        $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
        $level->addParticle($particle);
    }
+      public function onRespawn(PlayerRespawnEvent $event){
+       $player = $event->getPlayer();
+       $level = $player->getLevel();
+       $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+       $x = $config->get("X");
+       $y = $config->get("Y");
+       $z = $config->get("Z");
+       $text = $config->get("TEXT");
+       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
+       $level->addParticle($particle);
+   }
 }
