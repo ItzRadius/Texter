@@ -41,6 +41,7 @@ class Main extends PluginBase implements Listener{
         $y = $sender->y;
         $z = $sender->z;
         $text = implode(" ", $args);
+        $level = $sender->getLevel();
         $level->addParticle(new FloatingTextParticle($position, $text));
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
         $config->set("X",$x);
