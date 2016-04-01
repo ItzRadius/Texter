@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener{
        $y3 = $config->get("Y3");
        $z3 = $config->get("Z3");
        $text3 = $config->get("TEXT3");
-       $particle3 = new FloatingTextParticle(new Vector3($x3, $y3, $z3), $text3;
+       $particle3 = new FloatingTextParticle(new Vector3($x3, $y3, $z3), $text3);
        $level->addParticle($particle3);
    }
 }
