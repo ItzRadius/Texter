@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener{
         $x = $sender->x;
         $y = $sender->y;
         $z = $sender->z;
-        $sender->sendMessage(Color::YELLOW . "Your POS is:\n" . "Your X is:" . Color::GREEN . $x . Color::YELLOW . "\nYour Y is: " . Color::GREEN . $y . Color::YELLOW . "\nYour Z is: " . Color::GREEN . $z . Color::YELLOW . "Put your X - Y -Z in the config file to add Floating Text!");
+        $sender->sendMessage(Color::YELLOW . "Your POS is:\n" . "Your X is: " . Color::GREEN . $x . Color::YELLOW . "\nYour Y is: " . Color::GREEN . $y . Color::YELLOW . "\nYour Z is: " . Color::GREEN . $z . Color::YELLOW . "\nPut your X - Y -Z in the config file to add Floating Text!");
         }
 }
    public function onJoin(PlayerJoinEvent $event){
