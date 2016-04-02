@@ -23,23 +23,9 @@ use pocketmine\utils\config;
 class Main extends PluginBase implements Listener{
     
     public function onEnable(){
+	$this->saveDefaultConfig();
     	$this->getServer()->getPluginManager()->registerEvents($this ,$this);
         $this->getLogger()->info(Color::GREEN ."Enabled!");
-        @mkdir($this->getDataFolder());
-	$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$config->set("X1");
-	$config->set("Y1");
-	$config->set("Z1");
-	$config->set("TEXT1");
-	$config->set("X2");
-	$config->set("Y2");
-	$config->set("Z2");
-	$config->set("TEXT2");
-	$config->set("X3");
-	$config->set("Y3");
-	$config->set("Z3");
-	$config->set("TEXT3");
-	$config->save();
     }
     
     public function onDisable(){
