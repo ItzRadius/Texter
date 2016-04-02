@@ -4,6 +4,6 @@ main: Texter\Main
 api: [1.0.0, 2.0.0]
 version: 1.0.0
 commands:
- texter:
-  usage: /texter
-  description: Add floating text with ease!!
+ mypos:
+  usage: /mypos
+  description: Get your position!
