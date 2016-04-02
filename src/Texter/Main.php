@@ -33,8 +33,7 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if($cmd->getName() == "texter"){
-        $position = new Vector3($sender->x, $sender->y, $sender->z);
+        if($cmd->getName() == "mypos"){
         $x = $sender->x;
         $y = $sender->y;
         $z = $sender->z;
